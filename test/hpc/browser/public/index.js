@@ -1,4 +1,3 @@
-import { Component } from './component/base.js';
 import { Header } from './component/header.js';
 import { Menu } from './component/menu.js';
 import { Canvas } from './component/canvas.js';

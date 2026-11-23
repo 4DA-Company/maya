@@ -8,17 +8,16 @@ export class Label extends Component {
   initialize() {
     this.state = {
       text: this.getAttribute('text') || '',
-      variant: this.getAttribute('variant') || 'default' // default | running | done | tag
+      variant: this.getAttribute('variant') || 'tag' // pill | tag | ok | state
     };
   }
 
   render() {
     const text = this.getAttribute('text') ?? this.state.text;
     const variant = this.getAttribute('variant') ?? this.state.variant;
-    const partName = variant === 'tag' ? 'tag' : `status status-${variant}`;
 
     this.shadowRoot.innerHTML = `
-      <span part="${partName}">${text}</span>
+      <span part="${variant}">${text}</span>
     `;
     this.listen();
   }

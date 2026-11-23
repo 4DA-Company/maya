@@ -12,5 +12,5 @@ customElements.define('ui-label', Label);
 customElements.define('main-dashboard', Dashboard);
 
 new class extends Proxy {
-    /* Customize the Proxy class to handle T3 console telemetry and backend events */
+    /* Customize the Proxy class to handle T1 data-processing pipeline events */
 };

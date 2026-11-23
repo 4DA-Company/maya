@@ -9,15 +9,13 @@ export class Header extends Component {
     this.shadowRoot.innerHTML = `
       <header part="header">
         <div part="brand">
-          <div part="mark">4DA</div>
+          <div part="logo">4DA</div>
           <div>
-            <strong part="brand-title">4DA GLOBAL HOLDING</strong>
-            <small part="brand-sub">Infraestructura digital distribuida</small>
+            <b part="brand-title">TDPnet</b>
+            <div part="muted">EXPERIMENTAL CONSOLE</div>
           </div>
         </div>
-        <div part="head-right">
-          ENTORNO DE EXPERIMENTACIÓN<br>T3 · CAPACIDAD DE BRIDGES
-        </div>
+        <ui-label text="T1 · DATA PROCESSING" variant="pill" exportparts="pill"></ui-label>
       </header>
     `;
     this.listen();
