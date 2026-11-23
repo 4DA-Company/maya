@@ -1,0 +1,578 @@
+:root {
+  --ink: #17232d;
+  --muted: #687783;
+  --line: #dce3e8;
+  --bg: #f4f6f7;
+  --card: #ffffff;
+  --navy: #17364a;
+  --teal: #147d78;
+  --soft: #eaf3f2;
+  --amber: #a86c16;
+  --red: #a43c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.4 Arial, Helvetica, sans-serif;
+}
+
+#dashboard {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Header */
+main-dashboard::part(header) {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main-dashboard::part(brand) {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+main-dashboard::part(brand-sub) {
+  display: block;
+  font-weight: 400;
+  opacity: 0.75;
+  letter-spacing: 0;
+  margin-top: 3px;
+}
+
+main-dashboard::part(tag) {
+  display: inline-block;
+  border: 1px solid #78909e;
+  border-radius: 20px;
+  padding: 6px 11px;
+  font-size: 12px;
+}
+
+/* Main Workspace */
+main-dashboard::part(main) {
+  max-width: 1440px;
+  margin: auto;
+  padding: 18px;
+}
+
+/* Top Controls & Progressive Scaling */
+main-dashboard::part(top) {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+main-dashboard::part(panel) {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+main-dashboard::part(panel-title) {
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: var(--navy);
+}
+
+main-dashboard::part(section-h3) {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 9px;
+}
+
+main-dashboard::part(section-h3-mt) {
+  margin-top: 16px;
+}
+
+main-dashboard::part(row) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main-dashboard::part(row-actions),
+main-dashboard::part(row-config) {
+  margin-top: 12px;
+}
+
+main-dashboard::part(field) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+  flex: 1;
+}
+
+main-dashboard::part(label) {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+main-dashboard::part(select) {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: inherit;
+}
+
+main-dashboard::part(btn) {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+main-dashboard::part(btn):disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+main-dashboard::part(btn-primary) {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+main-dashboard::part(btn-stop) {
+  background: #f8eaea;
+  color: var(--red);
+  border: 1px solid #eccaca;
+}
+
+main-dashboard::part(btn-quiet) {
+  background: #edf1f3;
+  color: var(--ink);
+}
+
+main-dashboard::part(runstate-note),
+main-dashboard::part(note) {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+main-dashboard::part(note) {
+  margin-top: 8px;
+}
+
+/* D0-D3 Stepper */
+main-dashboard::part(progress) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+main-dashboard::part(step) {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px;
+  background: #fafbfb;
+  position: relative;
+}
+
+main-dashboard::part(step-title) {
+  display: block;
+  font-size: 13px;
+}
+
+main-dashboard::part(step-sub) {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+main-dashboard::part(step-active) {
+  border: 2px solid var(--teal);
+  background: var(--soft);
+}
+
+main-dashboard::part(step-done) {
+  border-color: #a7c9c5;
+  background: #f2f8f7;
+}
+
+main-dashboard::part(step-locked) {
+  opacity: 0.55;
+}
+
+/* KPIs */
+main-dashboard::part(kpis) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+main-dashboard::part(kpi) {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 13px;
+}
+
+main-dashboard::part(kpi-val) {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 4px 0;
+}
+
+main-dashboard::part(kpi-unit) {
+  font-size: 12px;
+}
+
+main-dashboard::part(kpi-sub) {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Pipeline & Metrics */
+main-dashboard::part(layout) {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+}
+
+main-dashboard::part(pipe) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+main-dashboard::part(stage) {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px;
+  background: #fbfcfc;
+}
+
+main-dashboard::part(stage-active) {
+  border-color: var(--teal);
+  background: var(--soft);
+}
+
+main-dashboard::part(stage-title) {
+  display: block;
+  font-size: 12px;
+}
+
+main-dashboard::part(stage-sub) {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+main-dashboard::part(dot) {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #aab5bc;
+  margin-right: 5px;
+}
+
+main-dashboard::part(dot-active) {
+  background: var(--teal);
+}
+
+main-dashboard::part(metrics) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+main-dashboard::part(metric) {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+
+main-dashboard::part(metric-val) {
+  display: block;
+  font-size: 16px;
+}
+
+main-dashboard::part(metric-label) {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Subgrid, Tables & Footer */
+main-dashboard::part(subgrid) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+main-dashboard::part(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+main-dashboard::part(table-mt) {
+  margin-top: 8px;
+}
+
+main-dashboard::part(th),
+main-dashboard::part(td) {
+  text-align: left;
+  padding: 8px 5px;
+  border-bottom: 1px solid var(--line);
+}
+
+main-dashboard::part(th) {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+main-dashboard::part(status-text) {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+main-dashboard::part(warning-text) {
+  color: var(--amber);
+}
+
+main-dashboard::part(footer) {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  main-dashboard::part(top),
+  main-dashboard::part(layout) {
+    grid-template-columns: 1fr;
+  }
+  main-dashboard::part(kpis) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  main-dashboard::part(main) {
+    padding: 10px;
+  }
+  main-dashboard::part(progress),
+  main-dashboard::part(pipe) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main-dashboard::part(header) {
+    padding: 13px;
+  }
+  main-dashboard::part(subgrid) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Styling for main-lobby */
+main-lobby {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 280px;
+  max-width: 600px;
+  height: 100vh;
+  background: #334155;
+  color: #ffffff;
+  box-sizing: border-box;
+  user-select: none;
+  border-right: 2px solid #475569;
+  transition: transform 0.2s ease, margin-left 0.2s ease;
+  z-index: 10;
+}
+
+main-lobby::part(container) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+main-lobby::part(header-logo) {
+  display: flex;
+  align-items: center;
+  background: black;
+  border: 1px solid #475569;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  gap: 12px;
+}
+
+main-lobby::part(logo-img) {
+  height: 3em;
+}
+
+main-lobby::part(quick-actions) {
+  display: flex;
+  gap: 8px;
+}
+
+main-lobby::part(btn-action) {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+main-lobby::part(btn-action):hover {
+  background: #0f172a;
+  color: #38bdf8;
+  border-color: #0ea5e9;
+}
+
+main-lobby::part(btn-action):active {
+  transform: scale(0.98);
+}
+
+main-lobby::part(btn-action-svg) {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+main-lobby::part(form-card) {
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+main-lobby::part(field-group) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+main-lobby::part(label) {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+main-lobby::part(input),
+main-lobby::part(select) {
+  width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+main-lobby::part(input):focus,
+main-lobby::part(select):focus {
+  outline: none;
+  border-color: #0ea5e9;
+}
+
+main-lobby::part(select) {
+  cursor: pointer;
+}
+
+main-lobby::part(btn-submit) {
+  background: #0284c7;
+  border: 1px solid #38bdf8;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+main-lobby::part(btn-submit):hover {
+  background: #0369a1;
+  border-color: #7dd3fc;
+}
+
+main-lobby::part(message-box) {
+  display: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  word-break: break-word;
+  margin-top: 4px;
+  transition: all 0.15s ease;
+}
+
+main-lobby::part(message-box-show) {
+  display: block;
+}
+
+main-lobby::part(message-box-info) {
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+main-lobby::part(message-box-error) {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid #f87171;
+  color: #fca5a5;
+}
+
+main-lobby::part(message-box-success) {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #34d399;
+  color: #6ee7b7;
+}
