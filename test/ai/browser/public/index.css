@@ -1,0 +1,271 @@
+/* Document Root Reset */
+:root {
+  /* Brighter, more neutral board color to make Black stones pop */
+  --bg: #020617;
+  /* Deepest space */
+  --board: #334155;
+  /* Muted Slate - much brighter than before */
+  --grid: #475569;
+  /* Lighter grid lines for definition */
+  --accent: #0ea5e9;
+  /* Electric Cyan */
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #020617;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+#dashboard {
+  _display: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+#lobby {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+/* Dashboard Host Layout */
+main-dashboard::part(container) {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: black;
+}
+
+main-dashboard::part(menu) {
+  display: flex;
+  width: 300px;
+  flex: 0 0 300px;
+  height: 100%;
+  overflow: hidden;
+  background: red;
+}
+
+main-dashboard::part(canvas) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: green;
+}
+
+main-dashboard::part(action-btn) {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  background: lightblue;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for main-lobby */
+main-lobby {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 280px;
+  max-width: 600px;
+  height: 100vh;
+  background: #334155;
+  color: #ffffff;
+  box-sizing: border-box;
+  user-select: none;
+  border-right: 2px solid #475569;
+  transition: transform 0.2s ease, margin-left 0.2s ease;
+  z-index: 10;
+}
+
+main-lobby::part(container) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+main-lobby::part(header-logo) {
+  display: flex;
+  align-items: center;
+  background: black;
+  border: 1px solid #475569;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  gap: 12px;
+}
+
+main-lobby::part(logo-img) {
+  height: 3em;
+}
+
+main-lobby::part(quick-actions) {
+  display: flex;
+  gap: 8px;
+}
+
+main-lobby::part(btn-action) {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+main-lobby::part(btn-action):hover {
+  background: #0f172a;
+  color: #38bdf8;
+  border-color: #0ea5e9;
+}
+
+main-lobby::part(btn-action):active {
+  transform: scale(0.98);
+}
+
+main-lobby::part(btn-action-svg) {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+main-lobby::part(form-card) {
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+main-lobby::part(field-group) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+main-lobby::part(label) {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+main-lobby::part(input),
+main-lobby::part(select) {
+  width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+main-lobby::part(input):focus,
+main-lobby::part(select):focus {
+  outline: none;
+  border-color: #0ea5e9;
+}
+
+main-lobby::part(select) {
+  cursor: pointer;
+}
+
+main-lobby::part(btn-submit) {
+  background: #0284c7;
+  border: 1px solid #38bdf8;
+  color: #ffffff;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+main-lobby::part(btn-submit):hover {
+  background: #0369a1;
+  border-color: #7dd3fc;
+}
+
+main-lobby::part(message-box) {
+  display: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  word-break: break-word;
+  margin-top: 4px;
+  transition: all 0.15s ease;
+}
+
+main-lobby::part(message-box-show) {
+  display: block;
+}
+
+main-lobby::part(message-box-info) {
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+main-lobby::part(message-box-error) {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid #f87171;
+  color: #fca5a5;
+}
+
+main-lobby::part(message-box-success) {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #34d399;
+  color: #6ee7b7;
+}
