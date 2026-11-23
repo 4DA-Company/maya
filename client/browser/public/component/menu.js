@@ -1,14 +1,13 @@
 import { Component } from './base.js';
 
-export class Canvas extends Component {
+export class Menu extends Component {
   constructor() {
     super();
   }
 
   render() {
     this.shadowRoot.innerHTML = `
-      <div class="container">
-        <button id="action-btn" part="action-btn">HEAT ME UP</button>
+      <div class="container" part="menu">
       </div>
     `;
     this.listen();

@@ -12,10 +12,6 @@ class Gateway extends network.Gateway {
         }
     }
 
-    listPipelines(criteria) {
-        this.request(this.address, config.gateway.peers.stage, 'pipelines', criteria)
-    }
-
     handleCheck(data) {
         Object.values(this.peers).forEach(address => {
             console.log('check', address,this.client.context)
@@ -23,16 +19,9 @@ class Gateway extends network.Gateway {
         })
     }
 
-
-    searchMarketplace(criteria) {
-        this.request(this.address, config.gateway.peers.marketplace, 'search', criteria)
-    }
-
     handleClientRequest(id, data) {
         switch (id) {
             case 'check' : this.handleCheck(data); break;
-            case 'pipelines': this.listPipelines(data); break;
-            case 'marketplace': this.searchMarketplace(data); break;
             /**the rest of the protocol between console and peers */
         }
     }
