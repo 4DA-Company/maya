@@ -1,7 +1,7 @@
 const config = require('./config')
 const network = require('./network')
 
-class Gateway extends network.Gateway {
+class Console extends network.Gateway {
     constructor(config) {
         super(config)
     }
@@ -51,17 +51,17 @@ new class extends network.Portal {
 
     handleAccess(data, context, ws) {
         console.log('handle access', data)
-        context.gateway = new Gateway({ ...data, client: { portal: this, context, ws } })
+        context.console = new Console({ ...data, client: { portal: this, context, ws } })
     }
 
     handleExit(data, context, ws) {
         console.log('handle exit', data)
-        context.gateway.handleExit(data);
+        context.console.handleExit(data);
         this.send('exit', data, context, ws)
     }
 
     handleRequest(data) {
         console.log('handle request', data)
-        context.gateway.handleClientRequest(data)
+        context.console.handleClientRequest(data)
     }
 }
