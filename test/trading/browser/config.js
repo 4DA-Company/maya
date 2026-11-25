@@ -7,7 +7,7 @@ module.exports = {
         credential: {
                 accesskey: 'ALAADM',
                 password: '0000000',
-                address: 'admin.aladino.maya.4da',
+                address: 'trading.test.maya.4da',
                 context: {}
         },
 
