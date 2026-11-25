@@ -5,19 +5,14 @@ module.exports = {
     system: {
         host: 'ws://213.199.58.37:5000', 
         credential: {
-                accesskey: 'ALAADM',
+                accesskey: 'THMAYA',
                 password: '0000000',
                 address: 'hpc.test.maya.4da',
                 context: {}
         },
 
         peers: {
-            academy: 'academy.aladino.maya.4da',
-            lab: 'lab.aladino.maya.4da',
-            marketplace: 'marketplace.aladino.maya.4da',
-            storage: 'storage.aladino.maya.4da',
-            assistance: 'assistance.aladino.maya.4da',
-            stage: 'stage.aladino.maya.4da'
+            stage: 'stage.test.maya.4da'
         }
 
     }
