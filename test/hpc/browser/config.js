@@ -5,7 +5,7 @@ module.exports = {
     system: {
         host: 'ws://213.199.58.37:5000', 
         credential: {
-                accesskey: 'THMAYA',
+                accesskey: 'HTMAYA',
                 password: '0000000',
                 address: 'hpc.test.maya.4da',
                 context: {}

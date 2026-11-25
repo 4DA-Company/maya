@@ -5,7 +5,7 @@ module.exports = {
     system: {
         host: 'ws://213.199.58.37:5000', 
         credential: {
-                accesskey: 'TBMAYA',
+                accesskey: 'BTMAYA',
                 password: '0000000',
                 address: 'batch.console.test.maya.4da',
                 context: {}
