@@ -88,4 +88,4 @@ class LocalProxy extends Proxy {
 }   
 
 
-export {  LocalProxy as Proxy };
+export {  RemoteProxy as Proxy };

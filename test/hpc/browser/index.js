@@ -20,6 +20,7 @@ class Console extends network.Gateway {
     }
 
     handleClientRequest(id, data) {
+        console.log('client request', id, data)
         switch (id) {
             case 'check' : this.handleCheck(data); break;
             /**the rest of the protocol between console and peers */
@@ -45,7 +46,7 @@ new class extends network.Portal {
         switch (id) {
             case 'access': this.handleAccess(data, context, ws); break;
             case 'exit': this.handleExit(data, context, ws); break;
-            default: this.handleRequest(data); break;
+            default: this.handleRequest(data, context); break;
         }
     }
 
@@ -60,8 +61,8 @@ new class extends network.Portal {
         this.send('exit', data, context, ws)
     }
 
-    handleRequest(data) {
+    handleRequest(data, context) {
         console.log('handle request', data)
-        context.console.handleClientRequest(data)
+        context.console?.handleClientRequest(data)
     }
 }

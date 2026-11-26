@@ -101,6 +101,7 @@ export class Dashboard extends Component {
   }
 
   handleAction(action, payload) {
+    console.log(this.state, action, payload)
     switch (action) {
       case 'mode-change':
         this.state.mode = payload.mode;
@@ -115,6 +116,7 @@ export class Dashboard extends Component {
         this.state.statusVariant = 'running';
         this.state.runId = 'T3-' + Date.now().toString().slice(-8);
         this.syncChildren();
+        this.on({action, payload})
         break;
 
       case 'stop':

@@ -99,10 +99,11 @@ export class Dashboard extends Component {
   }
 
   handleAction(action, payload) {
+        console.log(action, payload)    
     switch (action) {
       case 'select-corpus':
         this.state.corpus = payload.corpus;
-        this.syncChildren();
+        //this.syncChildren();
         break;
 
       case 'select-config':
