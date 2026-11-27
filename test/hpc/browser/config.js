@@ -7,7 +7,7 @@ module.exports = {
         credential: {
                 accesskey: 'HTMAYA',
                 password: '0000000',
-                address: 'hpc.test.maya.4da',
+                address: 'hpc.console.test.maya.4da',
                 context: {}
         },
 

@@ -9,7 +9,7 @@ class Gateway extends require('./system') {
 
     onGranted(data) {
         console.log('granted', this.address)
-        this.client.handleAccess('access', { granted: true, message: this.credential })
+        this.handleAccess({ granted: true, message: this.credential })
     }
 
     onDenied(data) {
@@ -55,7 +55,7 @@ class Gateway extends require('./system') {
     }    
 
    handleAccess(data){
-        this.client.portal.send(id, data, this.client.context, this.client.ws)
+        this.client.portal.send('access', data, this.client.context, this.client.ws)
     }    
 }
 
