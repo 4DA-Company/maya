@@ -57,7 +57,7 @@ new class extends network.Portal {
 
     handleExit(data, context, ws) {
         console.log('handle exit', data)
-        context.console.handleExit(data);
+        context.console?.handleExit(data);
         this.send('exit', data, context, ws)
     }
 
