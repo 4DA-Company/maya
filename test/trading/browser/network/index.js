@@ -14,7 +14,7 @@ class Gateway extends require('./system') {
 
     onDenied(data) {
         console.log('denied', this.address)
-        this.handleAccess('access', { granted: false, message: 'Access denied' })
+        this.handleAccess({ granted: false, message: 'Access denied' })
     }
 
     onEvent(id, packet) {
