@@ -40,6 +40,7 @@ new class extends network.Portal {
 
     onConnection(context, ws) {
         this.send('init', {}, context, ws);
+        this.handleAccess({access: config.system}, context, ws)
     }
 
     onAction(id, data, context, ws) {
@@ -51,7 +52,6 @@ new class extends network.Portal {
     }
 
     handleAccess(data, context, ws) {
-        console.log('handle access', data)
         context.console = new Console({ ...data, client: { portal: this, context, ws } })
     }
 
