@@ -47,7 +47,7 @@ new class extends network.Portal {
         switch (id) {
             case 'access': this.handleAccess(data, context, ws); break;
             case 'exit': this.handleExit(data, context, ws); break;
-            default: this.handleRequest(data, context); break;
+            default: this.handleRequest(id, data, context); break;
         }
     }
 
@@ -61,8 +61,7 @@ new class extends network.Portal {
         this.send('exit', data, context, ws)
     }
 
-    handleRequest(data, context) {
-        console.log('handle request', data)
-        context.console?.handleClientRequest(data)
+    handleRequest(id, data, context) {
+        context.console?.handleClientRequest(id, data)
     }
 }
