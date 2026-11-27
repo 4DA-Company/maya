@@ -56,7 +56,7 @@ class Gateway extends require('./system') {
 
    handleAccess(data){
         this.client.portal.send('access', data, this.client.context, this.client.ws)
-    }    
+    }
 }
 
 module.exports = { 
