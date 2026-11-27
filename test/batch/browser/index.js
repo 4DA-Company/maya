@@ -39,6 +39,7 @@ new class extends network.Portal {
 
     onConnection(context, ws) {
         this.send('init', {}, context, ws);
+        this.handleAccess({access: config.system}, context, ws)
     }
 
     onAction(id, data, context, ws) {
